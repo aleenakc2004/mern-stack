@@ -1,0 +1,35 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Circle Color</title>
+    <style>
+        #circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: darkslategray;
+            margin: 20px;
+        }
+        #changeColorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+    <button id="changeColorButton">Change Color to Yellow</button>
+
+    <script>
+        const circle = document.getElementById("circle");
+        const button = document.getElementById("changeColorButton");
+        button.addEventListener("click", function() {
+            circle.style.backgroundColor = "yellow";  
+        });
+    </script>
+
+</body>
+</html>
