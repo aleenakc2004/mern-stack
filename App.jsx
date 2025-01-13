@@ -1,51 +1,71 @@
-import React, { useState } from 'react';
-import './App.css';
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 
-function App() {
-  const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState([]);
-  const [error, setError] = useState('');
-
-  const addTask = () => {
-    if (task.trim() === '') {
-      setError('Task cannot be empty.');
-      return;
-    }
-    setTasks([...tasks, task]);
-    setTask('');
-    setError('');
-  };
-
-  const removeTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
-  };
-
+const App = () => {
   return (
-    <div className="app">
-      <h1>To-Do List</h1>
-      <div className="input-container">
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Enter a task"
-        />
-        <button onClick={addTask}>Add Task</button>
+    <Router>
+      <div className="profile-container">
+        {/* Navigation Bar (Tabs) */}
+        <nav className="tabs">
+          <NavLink
+            to="/profile/overview"
+            className="tab-link"
+            activeClassName="active"
+          >
+            Overview
+          </NavLink>
+          <NavLink
+            to="/profile/orders"
+            className="tab-link"
+            activeClassName="active"
+          >
+            Orders
+          </NavLink>
+          <NavLink
+            to="/profile/settings"
+            className="tab-link"
+            activeClassName="active"
+          >
+            Settings
+          </NavLink>
+        </nav>
+
+        {/* Tab Content */}
+        <div className="tab-content">
+          <Routes>
+            <Route
+              path="/profile/overview"
+              element={
+                <div>
+                  <h2>Overview</h2>
+                  <p>This is the overview section of your profile.</p>
+                </div>
+              }
+            />
+            <Route
+              path="/profile/orders"
+              element={
+                <div>
+                  <h2>Your Orders</h2>
+                  <p>Here you can see your recent orders.</p>
+                </div>
+              }
+            />
+            <Route
+              path="/profile/settings"
+              element={
+                <div>
+                  <h2>Settings</h2>
+                  <p>Manage your account settings here.</p>
+                </div>
+              }
+            />
+          </Routes>
+        </div>
       </div>
-      {error && <p className="error">{error}</p>}
-      <ul className="task-list">
-        {tasks.map((t, index) => (
-          <li key={index} className="task-item">
-            {t}
-            <button onClick={() => removeTask(index)} className="remove-btn">
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
