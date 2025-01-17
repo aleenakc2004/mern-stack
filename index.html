@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .product-item {
+            flex: 1 1 calc(25% - 2rem);
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-item h3 {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEasy</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to ShopEasy</h2>
+            <p>Your one-stop shop for the best deals!</p>
+        </section>
+
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product">
+                <div class="product-item">
+                    <img src="i.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$19.99</p>
+                </div>
+                <div class="product-item">
+                    <img src="8.webp" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$29.99</p>
+                </div>
+                <div class="product-item">
+                    <img src="7.webp" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>$39.99</p>
+                </div>
+                <div class="product-item">
+                    <img src="9.webp" alt="Product 4">
+                    <h3>Product 4</h3>
+                    <p>$15,49</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At ShopEasy, we pride ourselves on providing high-quality products at unbeatable prices. Our goal is to make your shopping experience seamless and enjoyable.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@shopeasy.com</p>
+            <p>Phone: +123-456-7890</p>
+        </section id="contact">
+        <footer>
+            <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+            <p>Email: contact@shopeasy.com | Phone: +123-456-7890</p>
+        </footer>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
